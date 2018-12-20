@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+puts "cleaning database"
+
+Comment.destroy_all
+Message.destroy_all
+Review.destroy_all
+Devproject.destroy_all
+Musicproject.destroy_all
+
+puts "generate new database"
+
+
