@@ -1,0 +1,2 @@
+class Musicproject < ApplicationRecord
+end
