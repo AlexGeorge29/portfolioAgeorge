@@ -10,9 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_12_20_204337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string "writter"
+    t.string "content"
+    t.string "project_type"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_type", "project_id"], name: "index_comments_on_project_type_and_project_id"
+  end
+
+  create_table "devprojects", force: :cascade do |t|
+    t.string "name"
+    t.string "language"
+    t.text "short_description"
+    t.text "long_description"
+    t.string "image"
+    t.string "client"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "sender"
+    t.string "email"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "musicprojects", force: :cascade do |t|
+    t.string "name"
+    t.string "software"
+    t.string "vst"
+    t.integer "time"
+    t.string "style"
+    t.text "short_descrption"
+    t.text "long_description"
+    t.string "image"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "sender"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

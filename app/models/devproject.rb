@@ -1,0 +1,2 @@
+class Devproject < ApplicationRecord
+end
