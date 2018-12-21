@@ -18,4 +18,11 @@ Musicproject.destroy_all
 
 puts "generate new database"
 
-
+5.times do
+  devproject = Devproject.new(
+    name:,
+    language:,
+    short_descrption: Faker::Lorem.sentences ,
+    long_description: Faker::Lorem.paragraphes ,
+    client:
+    )
